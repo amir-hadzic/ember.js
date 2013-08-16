@@ -468,6 +468,9 @@ Ember.Select = Ember.View.extend(
       });
       this.set('selection', selection);
     }
+
+    var view = this;
+    Em.run.next(function() { view.selectionDidChange(); });
   }, 'content.[]'),
 
   _triggerChange: function() {
